@@ -1,6 +1,7 @@
 # BrexitAgeWeighted
-<hr>
-Analysis of Brexit age-specific voting behaviour - for The Conversation article
+
+Analysis of Brexit age-specific voting behaviour - for The Conversation article.
+
 <hr>
 This is a 'back of the envelope' calculation of the age-specific voting results of the Brexit referendum using best available estimates to:
 
@@ -24,6 +25,8 @@ To recreate the analysis run:
 * `scripts/01-DataImport.R`
 * `scripts/02-DataCleanUp.R`
 * `scripts/03-Functions.R`
+* `SCRIPTS/04-FinalPlotAndResults.R`
+
 
 <hr>
 
@@ -40,3 +43,6 @@ For conveniece the table with all the results is saved separetely in `data/Final
 ## 6       65+ 11611167       0.9616406        0.830        0.40  147515796
 ```
 
+And here is the *alternative system* result:
+
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
