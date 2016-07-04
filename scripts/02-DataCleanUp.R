@@ -88,12 +88,15 @@ all.6age.groups %>%
 ## average ex for men and women:
 ###############################################################################
 
+## simple mean of male and female e(x) - simplification, but shouldn't 
+## affect the results much
 UK.life.exp.orig %>%
   mutate(ex.t = (ex + ex.1)/2) ->
   UK.life.exp.orig
-
-## ballpark the over 90 by taking the mean of the remaining
-UK.life.exp.orig$ex.t[91] <- mean(UK.life.exp.orig[UK.life.exp.orig$X.x>=90,13])
+## ballpark the over 90 by taking an adjusted mean of the remaining
+## 90-100 year-olds. (3/2 is an estimate, but is robust and doesn't 
+## change the results to the 2nd decimal point)
+UK.life.exp.orig$ex.t[91] <- 3/2*mean(UK.life.exp.orig[UK.life.exp.orig$X.x>=90,13])
 inner_join(UK.population.tidy, UK.life.exp.orig, by=c("age"="X.x"))%>%
   select(age, count, ex.t) %>%
   filter(age>=18)  %>%
@@ -102,7 +105,6 @@ inner_join(UK.population.tidy, UK.life.exp.orig, by=c("age"="X.x"))%>%
   group_by(age.group) %>%
   summarise(years.left=sum(years.left)) ->  life.expectancy
 all.6age.groups$years.left <- life.expectancy$years.left
-
 
 ## clean up and save
 ###############################################################################
@@ -121,3 +123,4 @@ save(results.summary,
      file="data/cleanData.Rdata")
 
 write.csv(all.6age.groups, "data/FinalTable.csv", row.names=FALSE)
+

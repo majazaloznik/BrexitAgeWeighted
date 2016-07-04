@@ -3,10 +3,11 @@
 Analysis of Brexit age-specific voting behaviour - for The Conversation article.
 
 <hr>
-This is a 'back of the envelope' calculation of the age-specific voting results of the Brexit referendum using best available estimates to:
+This is a **'back of the envelope'** calculation of the age-specific voting results of the Brexit referendum using best available estimates to:
 
 * first recreate the referendum results
 * then use life expectancy as an alternative vote weight
+
 <hr>
 
 The following data sources were used in this calculation (see `scripts/01-DataImport.R` for code):
@@ -25,12 +26,12 @@ To recreate the analysis run:
 * `scripts/01-DataImport.R`
 * `scripts/02-DataCleanUp.R`
 * `scripts/03-Functions.R`
-* `SCRIPTS/04-FinalPlotAndResults.R`
+* `scripts/04-FinalPlotAndResults.R`
 
 
 <hr>
 
-For conveniece the table with all the results is saved separetely in `data/FinalTable.csv` and reproduced below:
+For convenience the table with all the results is saved separately in `data/FinalTable.csv` and reproduced below:
 
 
 ```
@@ -40,7 +41,7 @@ For conveniece the table with all the results is saved separetely in `data/Final
 ## 3     35-44  8378302       0.9005604        0.725        0.52  355694721
 ## 4     45-54  9196082       0.9385801        0.770        0.44  305099646
 ## 5     55-64  7452381       0.9483274        0.810        0.43  181974128
-## 6       65+ 11611167       0.9616406        0.830        0.40  147515796
+## 6       65+ 11611167       0.9616406        0.830        0.40  148374089
 ```
 
 And here is the *alternative system* result:
